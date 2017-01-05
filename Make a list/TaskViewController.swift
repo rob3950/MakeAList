@@ -12,7 +12,22 @@ class TaskViewController: UIViewController {
 
     @IBOutlet weak var NameTxtFld: UITextField!
     @IBOutlet var ImportantSw: UIView!
+    
+    var previousVC = ViewController()
+    
+    
     @IBAction func AddBtn(_ sender: Any) {
+        let task77 = task()
+        task77.list = NameTxtFld.text!
+        task77.important = ImportantSw.isUserInteractionEnabled
+        
+        previousVC.task99.append(task77)
+        previousVC.TableView.reloadData()
+        navigationController?.popViewController(animated: true)
+        
+        
+        
+        
     }
     
     

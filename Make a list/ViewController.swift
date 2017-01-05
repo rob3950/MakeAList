@@ -69,9 +69,12 @@ class ViewController: UIViewController, UITableViewDelegate,UITableViewDataSourc
     
     @IBAction func AddTab(_ sender: Any) {
         performSegue(withIdentifier: "task101", sender: nil)
-        
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let nextvc = segue.destination as! TaskViewController
+        nextvc.previousVC = self
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
